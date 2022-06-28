@@ -3,3 +3,5 @@
 ```
 
 add change
+
+pull 取得远端数据库的内容
