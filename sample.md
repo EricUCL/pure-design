@@ -3,3 +3,5 @@
 ```
 
 add change
+
+commit 记录索引的状态
