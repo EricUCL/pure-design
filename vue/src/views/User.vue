@@ -34,13 +34,13 @@
       <el-table-column prop="role" label="角色">
         <template slot-scope="scope">
           <el-tag type="primary" v-if="scope.row.role === 'ROLE_ADMIN'">管理员</el-tag>
-          <el-tag type="warning" v-if="scope.row.role === 'ROLE_TEACHER'">老师</el-tag>
-          <el-tag type="success" v-if="scope.row.role === 'ROLE_STUDENT'">学生</el-tag>
+<!--          <el-tag type="warning" v-if="scope.row.role === 'ROLE_TEACHER'">老师</el-tag>-->
+          <el-tag type="success" v-if="scope.row.role === 'ROLE_USER'">用户</el-tag>
         </template>
       </el-table-column>
       <el-table-column prop="nickname" label="昵称" width="120"></el-table-column>
-      <el-table-column prop="email" label="邮箱"></el-table-column>
-      <el-table-column prop="phone" label="电话"></el-table-column>
+      <el-table-column prop="email" label="邮箱" width="130"></el-table-column>
+      <el-table-column prop="phone" label="电话" width="120"></el-table-column>
       <el-table-column prop="address" label="地址"></el-table-column>
       <el-table-column label="操作"  width="500" align="center">
         <template slot-scope="scope">

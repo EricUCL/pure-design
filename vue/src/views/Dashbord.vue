@@ -5,31 +5,31 @@
         <el-card style="color: #409EFF">
           <div><i class="el-icon-user-solid" /> 用户总数</div>
           <div style="padding: 10px 0; text-align: center; font-weight: bold">
-            100
+            3
           </div>
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card style="color: #F56C6C">
-          <div><i class="el-icon-money" /> 销售总量</div>
+          <div><i class="el-icon-money" /> 安全风险总量</div>
           <div style="padding: 10px 0; text-align: center; font-weight: bold">
-            ￥ 1000000
+            244
           </div>
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card style="color: #67C23A">
-          <div><i class="el-icon-bank-card" /> 收益总额</div>
+          <div><i class="el-icon-bank-card" /> 待抽检区域</div>
           <div style="padding: 10px 0; text-align: center; font-weight: bold">
-            ￥ 300000
+            21
           </div>
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card style="color: #E6A23C">
-          <div><i class="el-icon-s-shop" /> 门店总数</div>
+          <div><i class="el-icon-s-shop" /> 累计生成报告</div>
           <div style="padding: 10px 0; text-align: center; font-weight: bold">
-            20
+            242
           </div>
         </el-card>
       </el-col>
@@ -60,7 +60,7 @@ export default {
   mounted() {  // 页面元素渲染之后再触发
     var option = {
       title: {
-        text: '各季度会员数量统计',
+        text: '各季度食品安全风险发生数',
         subtext: '趋势图',
         left: 'center'
       },
@@ -80,22 +80,22 @@ export default {
       },
       series: [
         {
-          name: "星巴克",
+          name: "北京",
           data: [],
           type: 'bar'
         },
         {
-          name: "星巴克",
+          name: "北京",
           data: [],
           type: 'line'
         },
         {
-          name: "瑞幸咖啡",
+          name: "上海",
           data: [],
           type: 'bar'
         },
         {
-          name: "瑞幸咖啡",
+          name: "上海",
           data: [],
           type: 'line'
         }
@@ -106,7 +106,7 @@ export default {
 
     var pieOption = {
       title: {
-        text: '各季度会员数量统计',
+        text: '各季度食品安全风险发生占比',
         subtext: '比例图',
         left: 'center'
       },
@@ -120,7 +120,7 @@ export default {
       },
       series: [
         {
-          name: "星巴克",
+          name: "北京",
           type: 'pie',
           radius: '55%',
           center: ['25%', '70%'],
@@ -146,7 +146,7 @@ export default {
           }
         },
         {
-          name: "瑞幸咖啡",
+          name: "上海",
           type: 'pie',
           radius: '50%',
           center: ['75%', '50%'],
@@ -189,21 +189,29 @@ export default {
 
     this.request.get("/echarts/members").then(res => {
       // 填空
-      // option.xAxis.data = res.data.x
-      option.series[0].data = res.data
-      option.series[1].data = res.data
-
+      option.xAxis.data = res.data.x
+      // option.series[0].data = res.data
+      // option.series[1].data = res.data
+      option.series[0].data = [9,4,2,7]
+      option.series[1].data = [9,4,2,7]
       option.series[2].data = [5,6,7,8]
       option.series[3].data = [5,6,7,8]
       // 数据准备完毕之后再set
       myChart.setOption(option);
 
 
+      // pieOption.series[0].data = [
+      //   {name: "第一季度", value: res.data[0]},
+      //   {name: "第二季度", value: res.data[1]},
+      //   {name: "第三季度", value: res.data[2]},
+      //   {name: "第四季度", value: res.data[3]},
+      // ]
+
       pieOption.series[0].data = [
-        {name: "第一季度", value: res.data[0]},
-        {name: "第二季度", value: res.data[1]},
-        {name: "第三季度", value: res.data[2]},
-        {name: "第四季度", value: res.data[3]},
+        {name: "第一季度", value: 9},
+        {name: "第二季度", value: 4},
+        {name: "第三季度", value: 2},
+        {name: "第四季度", value: 7},
       ]
       pieChart.setOption(pieOption)
     })

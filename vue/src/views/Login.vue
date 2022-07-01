@@ -71,7 +71,8 @@ export default {
 <style>
 .wrapper {
   height: 100vh;
-  background-image: linear-gradient(to bottom right, #FC466B, #3F5EFB);
+  background-image: url(../../src/assets/background.jpg);
+  background-size: 100% 100%;
   overflow: hidden;
 }
 </style>

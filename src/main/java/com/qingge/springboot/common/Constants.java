@@ -12,4 +12,8 @@ public interface Constants {
 
     String FILES_KEY = "FILES_FRONT_ALL";
 
+    String FILE_TEMPLATE_PATH = "/Users/bytedance/IdeaProjects/pure-design/doc/template.docx";
+
+    String FILE_OUT_NAME = "封面.docx";
+
 }

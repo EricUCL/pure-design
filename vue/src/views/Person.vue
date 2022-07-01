@@ -1,15 +1,15 @@
 <template>
   <el-card style="width: 500px;">
     <el-form label-width="80px" size="small">
-      <el-upload
-          class="avatar-uploader"
-          :action="'http://' + serverIp +':9090/file/upload'"
-          :show-file-list="false"
-          :on-success="handleAvatarSuccess"
-      >
-        <img v-if="form.avatarUrl" :src="form.avatarUrl" class="avatar">
-        <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-      </el-upload>
+<!--      <el-upload-->
+<!--          class="avatar-uploader"-->
+<!--          :action="'http://' + serverIp +':9090/file/upload'"-->
+<!--          :show-file-list="false"-->
+<!--          :on-success="handleAvatarSuccess"-->
+<!--      >-->
+<!--        <img v-if="form.avatarUrl" :src="form.avatarUrl" class="avatar">-->
+<!--        <i v-else class="el-icon-plus avatar-uploader-icon"></i>-->
+<!--      </el-upload>-->
 
       <el-form-item label="用户名">
         <el-input v-model="form.username" disabled autocomplete="off"></el-input>
